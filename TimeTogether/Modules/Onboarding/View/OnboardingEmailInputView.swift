@@ -76,16 +76,10 @@ struct OnboardingEmailInputView: View {
             .padding(.top, 20)
             
             // MARK: - Skip Button
-            Button(action: onSkip) {
-                Text("Пропустить")
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .foregroundStyle(.black)
-                    .background(Color.backgroundGray)
-                    .cornerRadius(12)
-            }
-            .padding(.horizontal)
-            .padding(.top, 32)
+            
+            OnboardingActionButton(title: "Пропустить", action: onNext)
+                .padding(.horizontal)
+                .padding(.top, 32)
         }
         .background(Color.white)
         .edgesIgnoringSafeArea(.bottom)
