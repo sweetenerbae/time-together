@@ -6,7 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		8406DFA32DBD6E5B00FD119A /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 8406DFA22DBD6E4E00FD119A /* .gitignore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		8406DFA22DBD6E4E00FD119A /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		84FED4292DB4EA97005AF57B /* TimeTogether.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeTogether.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -32,6 +37,7 @@
 		84FED4202DB4EA97005AF57B = {
 			isa = PBXGroup;
 			children = (
+				8406DFA22DBD6E4E00FD119A /* .gitignore */,
 				84FED42B2DB4EA97005AF57B /* TimeTogether */,
 				84FED42A2DB4EA97005AF57B /* Products */,
 			);
@@ -109,6 +115,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8406DFA32DBD6E5B00FD119A /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
