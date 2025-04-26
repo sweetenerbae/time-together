@@ -4,6 +4,7 @@ struct OnboardingEmailInputView: View {
     
     // MARK: - Bindings
     @Binding var email: String
+    let isNextEnabled: Bool
 
     // MARK: - Callbacks
     let onNext: () -> Void
@@ -71,6 +72,7 @@ struct OnboardingEmailInputView: View {
                 .frame(height: 56)
                 .background(Color.primaryPurple)
                 .cornerRadius(12)
+                .disabled(!isNextEnabled)
             }
             .padding(.horizontal)
             .padding(.top, 20)
@@ -89,6 +91,7 @@ struct OnboardingEmailInputView: View {
 #Preview {
     OnboardingEmailInputView(
         email: .constant("example@mail.com"),
+        isNextEnabled: true,
         onNext: {},
         onBack: {},
         onSkip: {}

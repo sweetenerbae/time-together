@@ -14,20 +14,37 @@ final class OnboardingViewModel: ObservableObject {
     }
 
     var isLastPage: Bool { currentPage == 3 }
+    
+    var isFirstPage: Bool { currentPage == 0 }
+    
+    var isEmailValid: Bool {
+           let emailRegex = #"^\S+@\S+\.\S+$"#
+           return email.range(of: emailRegex, options: .regularExpression) != nil
+       }
 
-    var isActionEnabled: Bool {
+    var isActionButtonEnabled: Bool {
         if currentPage == 2 {
-            return email.contains("@") && email.contains(".")
+            return true
         }
         return true
     }
 
+    var isNextButtonEnabled: Bool {
+        isEmailValid
+    }
+    
     var actionButtonColor: Color {
         switch currentPage {
         case 2:
-            return .gray.opacity(0.3)
+            return .backgroundGray
         default:
-            return .purple
+            return .primaryPurple
+        }
+    }
+    
+    func backStep () {
+        if !isFirstPage {
+            currentPage -= 1
         }
     }
     
