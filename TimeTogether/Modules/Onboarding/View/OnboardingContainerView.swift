@@ -11,7 +11,7 @@ struct OnboardingContainerView: View {
             Group {
                 switch viewModel.currentPage {
                 case 0:
-                    OnboardingWelcomeView()
+                    OnboardingWelcomeView(onNext: { viewModel.nextStep() })
                 case 1:
                     OnboardingPointsView()
                 case 2:

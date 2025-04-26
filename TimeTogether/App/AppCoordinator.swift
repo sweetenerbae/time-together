@@ -10,7 +10,7 @@ final class AppCoordinator {
 
     func start() -> some View {
         if !hasCompletedOnboarding {
-            return AnyView(OnboardingWelcomeView())
+            return AnyView(OnboardingWelcomeView(onNext: {}))
         } else {
             return AnyView(Text ("Заглушка")
                 .font(.system(size: 28))

@@ -10,8 +10,8 @@ struct OnboardingActionButton: View {
             Text(title)
                 .font(.system(size: 16))
                 .foregroundColor(.white)
+                .frame(height: 56)
                 .frame(maxWidth: .infinity)
-                .padding()
                 .background(isEnabled ? Color.primaryPurple : Color.gray)
                 .cornerRadius(16)
         }

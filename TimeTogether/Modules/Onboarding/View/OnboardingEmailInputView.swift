@@ -15,11 +15,13 @@ struct OnboardingEmailInputView: View {
         Spacer()
         
         VStack(spacing: 0) {
+            OnboardingPageIndicator(totalPages: 4, currentPage: 2)
+            
             // MARK: - Illustration
             Image("EmailOnboarding")
                 .resizable()
                 .scaledToFit()
-                .frame(height: 250)
+                .frame(maxWidth: .infinity)
                 .padding(.vertical, 40)
             
             // MARK: - Title & Description
@@ -77,11 +79,11 @@ struct OnboardingEmailInputView: View {
             .padding(.horizontal)
             .padding(.top, 20)
             
-            // MARK: - Skip Button
+            Spacer()
             
+            // MARK: - Skip Button
             OnboardingActionButton(title: "Пропустить", action: onNext)
-                .padding(.horizontal)
-                .padding(.top, 32)
+                .padding(.bottom, 30)
         }
         .background(Color.white)
         .edgesIgnoringSafeArea(.bottom)
