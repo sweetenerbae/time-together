@@ -1,20 +1,21 @@
 import SwiftUI
 
 final class AppCoordinator {
-
-    // MARK: - Properties
-
+    
     @AppStorage("hasCompletedOnboarding") private var hasCompletedOnboarding = false
     
-    // MARK: - Start
-
     func start() -> some View {
         if !hasCompletedOnboarding {
-            return AnyView(OnboardingWelcomeView(onNext: {}))
+            return AnyView(
+                OnboardingContainerView(onFinish: {
+                    self.hasCompletedOnboarding = true
+                })
+            )
         } else {
-            return AnyView(Text ("Заглушка")
-                .font(.system(size: 28))
-                .foregroundStyle(Color.red)
+            return AnyView(
+                Text("Заглушка")
+                    .font(.system(size: 28))
+                    .foregroundStyle(Color.red)
             )
         }
     }
