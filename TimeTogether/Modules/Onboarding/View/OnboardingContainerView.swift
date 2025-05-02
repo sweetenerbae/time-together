@@ -12,7 +12,7 @@ struct OnboardingContainerView: View {
                 case 0:
                     OnboardingWelcomeView(onNext: { viewModel.nextStep() })
                 case 1:
-                    OnboardingPointsView()
+                    OnboardingPointsView(onNext: { viewModel.nextStep() })
                 case 2:
                     OnboardingEmailInputView(
                         email: $viewModel.email,

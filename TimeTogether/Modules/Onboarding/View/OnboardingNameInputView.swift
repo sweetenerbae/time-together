@@ -27,13 +27,16 @@ struct OnboardingNameInputView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal)
             
-            Button("завершить") {
-                onFinish()
-            }
+            Spacer()
+            
+            OnboardingActionButton(title: "Заверишть", action: onFinish)
+                .padding(.bottom, 30)
         }
+        .background(.white)
+        .ignoresSafeArea()
     }
 }
 
 #Preview {
-    OnboardingNameInputView(onFinish: <#T##() -> Void#>)
+    OnboardingNameInputView(onFinish: {})
 }
