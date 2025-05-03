@@ -4,10 +4,9 @@ struct OnboardingWelcomeView: View {
     let onNext: () -> Void
     
     var body: some View {
-        Spacer()
-        
         VStack(spacing: 0) {
             OnboardingPageIndicator(totalPages: 4, currentPage: 0)
+                .padding(.top, 50)
             
             Spacer()
             
@@ -19,7 +18,7 @@ struct OnboardingWelcomeView: View {
             
             // MARK: - Title & Description
             VStack(alignment: .leading, spacing: 8) {
-                Text("Время Вместе")
+                Text("Время вместе")
                     .font(.system(size: 28, weight: .bold))
                     .fontWeight(.bold)
                     .foregroundStyle(Color.labelBlack)
@@ -34,12 +33,12 @@ struct OnboardingWelcomeView: View {
             Spacer()
             
             // MARK: - Next Button
-            OnboardingActionButton(title: "Далее", action: onNext)
-                .padding(.bottom, 30)
+            OnboardingActionButton(title: "Далее", action: onNext, backgroundColor: Color.primaryPurple, foregroundColor: Color.white)
+                .padding(.horizontal)
+                .padding(.bottom, 60)
         }
         .background(Color.white)
-        .edgesIgnoringSafeArea(.bottom)
-        Spacer()
+        .ignoresSafeArea()
     }
 }
 

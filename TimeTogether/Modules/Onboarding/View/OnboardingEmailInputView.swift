@@ -12,11 +12,11 @@ struct OnboardingEmailInputView: View {
     let onSkip: () -> Void
     
     var body: some View {
-        Spacer()
-        
         ZStack() {
             VStack(spacing: 0) {
                 OnboardingPageIndicator(totalPages: 4, currentPage: 2)
+                    .padding(.top, 50)
+
                 
                 // MARK: - Illustration
                 Image("EmailOnboarding")
@@ -83,11 +83,13 @@ struct OnboardingEmailInputView: View {
                 Spacer()
                 
                 // MARK: - Skip Button
-                OnboardingActionButton(title: "Пропустить", action: onNext)
-                    .padding(.bottom, 30)
+                OnboardingActionButton(title: "Пропустить", action: onNext, backgroundColor: Color.backgroundGray, foregroundColor: Color.labelBlack)
+                    .padding(.horizontal)
+                    .padding(.bottom, 60)
             }
             .background(Color.white)
             .ignoresSafeArea()
+            .hideKeyboardOnTap()
         }
     }
 }

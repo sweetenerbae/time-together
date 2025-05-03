@@ -54,3 +54,17 @@ final class OnboardingViewModel: ObservableObject {
         }
     }
 }
+
+final class NameInputViewModel: ObservableObject {
+    @Published var lastName: String = ""
+    @Published var firstName: String = ""
+    @Published var middleName: String = ""
+    
+    var isLoginEnabled: Bool {
+        !lastName.isEmpty && !firstName.isEmpty && !middleName.isEmpty
+    }
+    
+    func login() {
+        // сетевой запрос, валидация, и т.п.
+    }
+}

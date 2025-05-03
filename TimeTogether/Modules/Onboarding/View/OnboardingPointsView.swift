@@ -4,13 +4,22 @@ struct OnboardingPointsView: View {
     let onNext: () -> Void
 
     var body: some View {
-        Spacer()
-        
         VStack(spacing: 0) {
+            Spacer()
+
             OnboardingPageIndicator(totalPages: 4, currentPage: 1)
-            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Hello, world!@*/Text("Hello, world!")/*@END_MENU_TOKEN@*/
-            OnboardingActionButton(title: "ddfs", action: onNext)
-                .padding(.bottom, 30)
+            
+            Spacer()
+            
+            OnboardingActionButton(title: "Пропустить", action: onNext, backgroundColor: Color.primaryPurple, foregroundColor: Color.white)
+                .padding(.horizontal)
+                .padding(.bottom, 60)
         }
+        .background(Color.white)
+        .ignoresSafeArea()
     }
+}
+
+#Preview {
+    OnboardingPointsView(onNext: {} )
 }

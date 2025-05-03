@@ -11,7 +11,6 @@ struct OnboardingPageIndicator: View {
                     .fill(index == currentPage ? Color.primaryPurple : Color.backgroundGray)
                     .frame(maxWidth: .infinity) // каждый Capsule тянется
                     .frame(height: 8)
-//                        .scaleEffect(x: index == currentPage ? 2.0 : 1.0, y: 1.0, anchor: .center) // увеличиваем текущий по ширине
                     .animation(.easeInOut(duration: 0.3), value: currentPage)
             }
         }
