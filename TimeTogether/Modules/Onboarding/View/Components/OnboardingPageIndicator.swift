@@ -8,7 +8,7 @@ struct OnboardingPageIndicator: View {
         HStack(spacing: 4) {
             ForEach(0..<totalPages, id: \.self) { index in
                 Capsule()
-                    .fill(index == currentPage ? Color.primaryPurple : Color.backgroundGray)
+                    .fill(index <= currentPage ? Color.primaryPurple : Color.backgroundGray)
                     .frame(maxWidth: .infinity) // каждый Capsule тянется
                     .frame(height: 8)
                     .animation(.easeInOut(duration: 0.3), value: currentPage)

@@ -17,7 +17,6 @@ struct OnboardingEmailInputView: View {
                 OnboardingPageIndicator(totalPages: 4, currentPage: 2)
                     .padding(.top, 50)
 
-                
                 // MARK: - Illustration
                 Image("EmailOnboarding")
                     .resizable()

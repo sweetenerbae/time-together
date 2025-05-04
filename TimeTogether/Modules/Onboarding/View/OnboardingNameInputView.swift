@@ -9,27 +9,31 @@ struct OnboardingNameInputView: View {
         ZStack() {
             VStack(spacing: 0) {
                 
-                OnboardingPageIndicator(totalPages: 4, currentPage: 3)
-                
-                Image("NamePng")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 20)
-                
-                // MARK: - Title & Description
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("Введите ваше ФИО")
-                        .font(.system(size: 28, weight: .bold))
-                        .fontWeight(.bold)
-                        .foregroundStyle(Color.labelBlack)
+                VStack() {
+                    Spacer()
+                    OnboardingPageIndicator(totalPages: 4, currentPage: 3)
                     
-                    Text("Это требуется для того, чтобы можно было присоединиться к семье")
-                        .font(.system(size: 18, weight: .regular))
-                        .foregroundStyle(Color.labelBlack)
+                    Image("NamePng")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 300, height: 300)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 20)
+                    
+                    // MARK: - Title & Description
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Введите ваше ФИО")
+                            .font(.system(size: 28, weight: .bold))
+                            .fontWeight(.bold)
+                            .foregroundStyle(Color.labelBlack)
+                        
+                        Text("Это требуется для того, чтобы можно было присоединиться к семье")
+                            .font(.system(size: 18, weight: .regular))
+                            .foregroundStyle(Color.labelBlack)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal)
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.horizontal)
                 
                 Spacer()
                 
@@ -61,11 +65,11 @@ struct OnboardingNameInputView: View {
                 }
                 .padding(.top)
                 .padding(.horizontal)
-                .padding(.bottom, 16)
+                .padding(.bottom, 30)
                 
                 OnboardingActionButton(title: "Завершить", action: onFinish, backgroundColor: Color.primaryPurple, foregroundColor: Color.white)
-                    .padding(.horizontal)
-                    .padding(.bottom, 60)
+                    .padding(.horizontal, 20)
+                    .padding(.bottom, 30)
             }
             .background(Color.white)
             .ignoresSafeArea()

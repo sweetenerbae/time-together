@@ -34,8 +34,8 @@ struct OnboardingWelcomeView: View {
             
             // MARK: - Next Button
             OnboardingActionButton(title: "Далее", action: onNext, backgroundColor: Color.primaryPurple, foregroundColor: Color.white)
-                .padding(.horizontal)
-                .padding(.bottom, 60)
+                .padding(.horizontal, 20)
+                .padding(.bottom, 30)
         }
         .background(Color.white)
         .ignoresSafeArea()
