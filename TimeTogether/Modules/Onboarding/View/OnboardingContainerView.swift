@@ -5,32 +5,29 @@ struct OnboardingContainerView: View {
     var onFinish: () -> Void
 
     var body: some View {
-        VStack {
-            Spacer()
-            Group {
-                switch viewModel.currentPage {
-                case 0:
-                    OnboardingWelcomeView(onNext: { viewModel.nextStep() })
-                case 1:
-                    OnboardingPointsView(onNext: { viewModel.nextStep() })
-                case 2:
-                    OnboardingEmailInputView(
-                        email: $viewModel.email,
-                        isNextEnabled: viewModel.isNextButtonEnabled,
-                        onNext: { viewModel.nextStep() },
-                        onBack: { viewModel.backStep() },
-                        onSkip: { viewModel.nextStep() }
-                    )
-                case 3:
-                    OnboardingNameInputView(
-                        onFinish: {
-                            onFinish()
-                        }
-                    )
-                default:
-                    EmptyView()
-                }
+        VStack(spacing: 0) {
+            OnboardingPageIndicator(totalPages: 4, currentPage: viewModel.currentPage)
+                .padding(.top, 50)
+
+            TabView(selection: $viewModel.currentPage) {
+                OnboardingWelcomeView(onNext: viewModel.nextStep)
+                    .tag(0)
+                OnboardingPointsView(onNext: viewModel.nextStep)
+                    .tag(1)
+                OnboardingEmailInputView(
+                    email: $viewModel.email,
+                    isNextEnabled: viewModel.isNextButtonEnabled,
+                    onNext: viewModel.nextStep,
+                    onBack: viewModel.backStep,
+                    onSkip: viewModel.nextStep
+                )
+                    .tag(2)
+                OnboardingNameInputView(onFinish: onFinish)
+                    .tag(3)
             }
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never)) // отключаем стандартные точки
         }
+        .background(Color("white"))
+        .ignoresSafeArea()
     }
 }

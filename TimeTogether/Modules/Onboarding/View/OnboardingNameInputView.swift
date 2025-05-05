@@ -10,9 +10,6 @@ struct OnboardingNameInputView: View {
             VStack(spacing: 0) {
                 
                 VStack() {
-                    Spacer()
-                    OnboardingPageIndicator(totalPages: 4, currentPage: 3)
-                    
                     Image("NamePng")
                         .resizable()
                         .scaledToFit()
@@ -30,6 +27,7 @@ struct OnboardingNameInputView: View {
                         Text("Это требуется для того, чтобы можно было присоединиться к семье")
                             .font(.system(size: 18, weight: .regular))
                             .foregroundStyle(Color.labelBlack)
+                            .fixedSize(horizontal: false, vertical: true)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal)
@@ -39,40 +37,40 @@ struct OnboardingNameInputView: View {
                 
                 VStack(spacing: 12) {
                     TextField("Имя", text: $viewModel.firstName)
-                        .padding(.horizontal)
                         .frame(height: 56)
                         .frame(maxWidth: .infinity)
+                        .padding(.horizontal, 16)
                         .textInputAutocapitalization(.words)
                         .background(Color.backgroundGray)
                         .cornerRadius(8)
                     
-                    TextField("Фамилия", text: $viewModel.lastName)
-                        .padding(.horizontal)
+                    TextField("Фамилия*", text: $viewModel.lastName)
                         .frame(height: 56)
                         .frame(maxWidth: .infinity)
+                        .padding(.horizontal, 16)
                         .textInputAutocapitalization(.words)
                         .background(Color.backgroundGray)
                         .cornerRadius(8)
                     
                     TextField("Отчество", text: $viewModel.middleName)
-                        .padding(.horizontal)
                         .frame(height: 56)
                         .frame(maxWidth: .infinity)
+                        .padding(.horizontal, 16)
                         .textInputAutocapitalization(.words)
                         .background(Color.backgroundGray)
                         .cornerRadius(8)
                     
                 }
-                .padding(.top)
-                .padding(.horizontal)
-                .padding(.bottom, 30)
+                .padding(.horizontal, 20)
+                .padding(.bottom, 24)
                 
-                OnboardingActionButton(title: "Завершить", action: onFinish, backgroundColor: Color.primaryPurple, foregroundColor: Color.white)
+                OnboardingActionButton(title: "Завершить",
+                                       action: onFinish,
+                                       backgroundColor: Color.primaryPurple,
+                                       foregroundColor: Color("white"))
                     .padding(.horizontal, 20)
-                    .padding(.bottom, 30)
             }
-            .background(Color.white)
-            .ignoresSafeArea()
+            .background(Color("white"))
             .hideKeyboardOnTap()
         }
     }

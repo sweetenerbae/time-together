@@ -26,9 +26,9 @@ extension Color {
 
     // MARK: - App Colors
 
-    static let primaryPurple = Color(hex: "#600082")
-    static let backgroundGray = Color(hex: "#F6F6F6")
-    static let labelBlack = Color(hex: "#343332")
-    static let accentGreen = Color(hex: "#5DCF9A")
-    static let dangerRed = Color(hex: "#FF5A5F")
+    static let primaryPurple = Color("purple")
+    static let backgroundGray = Color("gray")
+    static let labelBlack = Color("black")
+    static let accentGreen = Color("green")
+    static let dangerRed = Color("red")
 }
