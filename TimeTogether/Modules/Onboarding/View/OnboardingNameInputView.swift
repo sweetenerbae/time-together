@@ -13,7 +13,7 @@ struct OnboardingNameInputView: View {
                     Image("NamePng")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 300, height: 300)
+                        .frame(width: 280, height: 280)
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 20)
                     
@@ -30,7 +30,7 @@ struct OnboardingNameInputView: View {
                             .fixedSize(horizontal: false, vertical: true)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal)
+                    .padding(.horizontal, 20)
                 }
                 
                 Spacer()
@@ -67,10 +67,11 @@ struct OnboardingNameInputView: View {
                 OnboardingActionButton(title: "Завершить",
                                        action: onFinish,
                                        backgroundColor: Color.primaryPurple,
-                                       foregroundColor: Color("white"))
+                                       foregroundColor: Color("whiteAsset"))
                     .padding(.horizontal, 20)
+                    .padding(.bottom, 30)
             }
-            .background(Color("white"))
+            .background(Color("whiteAsset"))
             .hideKeyboardOnTap()
         }
     }

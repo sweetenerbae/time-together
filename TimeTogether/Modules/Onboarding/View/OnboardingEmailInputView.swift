@@ -84,7 +84,7 @@ struct OnboardingEmailInputView: View {
                 }
                 .padding(.bottom, 30)
             }
-            .background(Color("white"))
+            .background(Color("whiteAsset"))
             .hideKeyboardOnTap()
         }
     }

@@ -27,7 +27,7 @@ struct OnboardingContainerView: View {
             }
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never)) // отключаем стандартные точки
         }
-        .background(Color("white"))
+        .background(Color("whiteAsset"))
         .ignoresSafeArea()
     }
 }

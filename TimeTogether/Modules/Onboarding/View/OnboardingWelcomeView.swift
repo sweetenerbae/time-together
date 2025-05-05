@@ -35,11 +35,11 @@ struct OnboardingWelcomeView: View {
             OnboardingActionButton(title: "Далее",
                                    action: onNext,
                                    backgroundColor: Color.primaryPurple,
-                                   foregroundColor: Color("white"))
+                                   foregroundColor: Color("whiteAsset"))
                 .padding(.horizontal, 20)
                 .padding(.bottom, 30)
         }
-        .background(Color("white"))
+        .background(Color("whiteAsset"))
     }
 }
 
