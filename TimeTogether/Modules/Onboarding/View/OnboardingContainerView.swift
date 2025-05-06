@@ -22,7 +22,7 @@ struct OnboardingContainerView: View {
                     onSkip: viewModel.nextStep
                 )
                     .tag(2)
-                OnboardingNameInputView(onFinish: onFinish)
+                OnboardingNameInputView(onNext: viewModel.nextStep)
                     .tag(3)
             }
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never)) // отключаем стандартные точки

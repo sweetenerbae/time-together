@@ -3,12 +3,11 @@ import SwiftUI
 struct OnboardingNameInputView: View {
     @ObservedObject var viewModel = NameInputViewModel()
     
-    var onFinish: () -> Void
+    var onNext: () -> Void
 
     var body: some View {
         ZStack() {
             VStack(spacing: 0) {
-                
                 VStack() {
                     Image("NamePng")
                         .resizable()
@@ -65,7 +64,7 @@ struct OnboardingNameInputView: View {
                 .padding(.bottom, 24)
                 
                 OnboardingActionButton(title: "Завершить",
-                                       action: onFinish,
+                                       action: onNext,
                                        backgroundColor: Color.primaryPurple,
                                        foregroundColor: Color("whiteAsset"))
                     .padding(.horizontal, 20)
@@ -78,5 +77,5 @@ struct OnboardingNameInputView: View {
 }
 
 #Preview {
-    OnboardingNameInputView(onFinish: {})
+    OnboardingNameInputView(onNext: {})
 }
