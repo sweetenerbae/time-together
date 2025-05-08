@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct InterestSelectionView: View {
-    @State var searchText: String = ""
+    @State private var searchText: String = ""
     @State private var selectedInterests: Set<String> = []
     
     // All available interests with their image names
@@ -27,35 +27,13 @@ struct InterestSelectionView: View {
     
     let minimumSelections = 5
     var onFinish: () -> Void
-    
+   
     var body: some View {
         VStack(spacing: 0) {
-            HStack {
-                HStack(spacing: 8) {
-                    Image(systemName: "magnifyingglass")
-                        .foregroundColor(Color(hex: "828282"))
-                    
-                    TextField("Быстро найдём желаемое", text: $searchText)
-                }
-                .padding(.horizontal, 12)
-                .padding(.vertical, 12)
-                .background(Color.backgroundGray)
-                .cornerRadius(8)
-                
-                Button(action: {}){
-                    Image("bell")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 22, height: 22)
-                        .foregroundColor(.labelBlack)
-                        .padding(12)
-                        .background(Color.backgroundGray)
-                        .cornerRadius(8)
-                }
-            }
-            .padding(.horizontal, 20)
-            .padding(.vertical, 10)
-            
+            SearchBar(searchText: $searchText)
+                .padding(.horizontal, 20)
+                .padding(.vertical, 10)
+
             Divider()
             
             ScrollView {
@@ -75,7 +53,7 @@ struct InterestSelectionView: View {
                         }
                         .padding(20)
                     }
-                    padding(.horizontal, 20)
+                    .padding(.horizontal, 20)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.top, 20)
                     
@@ -108,7 +86,7 @@ struct InterestSelectionView: View {
                 }
                 .padding(.bottom, 80)
             }
-        
+
             OnboardingActionButton(title: "Сохранить",
                                    action: onFinish,
                                    backgroundColor: .primaryPurple,
@@ -117,11 +95,12 @@ struct InterestSelectionView: View {
             .padding(.bottom, 30)
             
         }
-        .background(Color.whiteAsset)
+        .background(Color("whiteAsset"))
         .hideKeyboardOnTap()
     }
 }
 
 #Preview {
     InterestSelectionView(onFinish: {})
+
 }
