@@ -24,7 +24,6 @@ struct InterestSelectionView: View {
             Interest(id: "health", name: "Здоровье", imageName: "health_image")
         ]
         
-    
     let minimumSelections = 5
     var onFinish: () -> Void
    
@@ -64,7 +63,7 @@ struct InterestSelectionView: View {
                             GridItem(.flexible()),
                             GridItem(.flexible())
                         ],
-                        spacing: 12
+                        spacing: 14
                     ) {
                         ForEach(interests) { interest in
                             InterestCell(
