@@ -25,7 +25,7 @@ struct InterestCell: View {
             
             Text(name)
                 .font(.caption)
-                .foregroundColor(isSelected ? .primaryPurple : .gray)
+                .foregroundColor(isSelected ?  .primaryPurple : .gray)
                 .fontWeight(isSelected ? .bold : .medium)
         }
     }
