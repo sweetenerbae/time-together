@@ -32,7 +32,7 @@ struct OnboardingPointsView: View {
             Spacer()
             
             // MARK: - Next Button
-            OnboardingActionButton(title: "Далее",
+            ActionButton(title: "Далее",
                                    action: onNext,
                                    backgroundColor: Color.primaryPurple,
                                    foregroundColor: Color("whiteAsset"))

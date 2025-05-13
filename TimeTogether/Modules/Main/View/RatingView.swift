@@ -17,13 +17,9 @@ struct RatingView: View {
     
     var body: some View {
         GeometryReader { geometry in
-            let screenWidth = geometry.size.width
-            
             VStack(spacing: 0) {
-                // Верхняя панель с заголовком
                 HStack {
                     Button(action: {
-                        // Действие для кнопки "Назад"
                     }) {
                         Image(systemName: "chevron.left")
                             .font(.system(size: 20, weight: .medium))

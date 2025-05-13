@@ -63,7 +63,7 @@ struct OnboardingNameInputView: View {
                 .padding(.horizontal, 20)
                 .padding(.bottom, 24)
                 
-                OnboardingActionButton(title: "Завершить",
+                ActionButton(title: "Завершить",
                                        action: onNext,
                                        backgroundColor: Color.primaryPurple,
                                        foregroundColor: Color("whiteAsset"))

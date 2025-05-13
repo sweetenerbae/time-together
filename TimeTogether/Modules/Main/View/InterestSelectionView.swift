@@ -86,7 +86,7 @@ struct InterestSelectionView: View {
                 .padding(.bottom, 80)
             }
 
-            OnboardingActionButton(title: "Сохранить",
+            ActionButton(title: "Сохранить",
                                    action: onFinish,
                                    backgroundColor: .primaryPurple,
                                    foregroundColor: Color("whiteAsset"))

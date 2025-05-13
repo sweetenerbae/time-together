@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct OnboardingActionButton: View {
+struct ActionButton: View {
     var title: String
     var action: () -> Void
     var isEnabled: Bool = true
