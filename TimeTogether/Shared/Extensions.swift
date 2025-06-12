@@ -1,7 +1,22 @@
+import Foundation
 import SwiftUI
+import UIKit
+
+extension View {
+    func hideKeyboardOnTap() -> some View {
+        self.onTapGesture {
+            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+        }
+    }
+}
+
+extension Double {
+    func roundDouble() -> String {
+        return String(format: "%.0f", self)
+    }
+}
 
 extension Color {
-    // MARK: - HEX Initializer
     init(hex: String) {
         let hex = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
         var int: UInt64 = 0
@@ -23,8 +38,6 @@ extension Color {
                   blue: Double(b) / 255,
                   opacity: Double(a) / 255)
     }
-
-    // MARK: - App Colors
 
     static let primaryPurple = Color("purpleAsset")
     static let backgroundGray = Color("grayAsset")

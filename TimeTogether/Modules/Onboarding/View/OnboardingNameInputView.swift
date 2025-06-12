@@ -3,7 +3,7 @@ import SwiftUI
 struct OnboardingNameInputView: View {
     @ObservedObject var viewModel = NameInputViewModel()
     
-    var onNext: () -> Void
+    var onFinish: () -> Void
 
     var body: some View {
         ZStack() {
@@ -64,7 +64,7 @@ struct OnboardingNameInputView: View {
                 .padding(.bottom, 24)
                 
                 ActionButton(title: "Завершить",
-                                       action: onNext,
+                                       action: onFinish,
                                        backgroundColor: Color.primaryPurple,
                                        foregroundColor: Color("whiteAsset"))
                     .padding(.horizontal, 20)
@@ -77,5 +77,5 @@ struct OnboardingNameInputView: View {
 }
 
 #Preview {
-    OnboardingNameInputView(onNext: {})
+    OnboardingNameInputView(onFinish: {})
 }

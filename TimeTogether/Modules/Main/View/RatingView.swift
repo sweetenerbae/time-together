@@ -1,10 +1,8 @@
 import SwiftUI
 
 struct RatingView: View {
-    // Состояние для сегментированного переключателя
     @State private var selectedTab: Int = 0
     
-    // Данные о семьях
     let families = [
         Family(id: 1, name: "Семья Рамазановых", points: "133kk", rank: 1),
         Family(id: 2, name: "Семья Расуловых", points: "113kk", rank: 2),
@@ -37,7 +35,6 @@ struct RatingView: View {
                     Spacer()
                     
                     Button(action: {
-                        // Действие для кнопки "Уведомления"
                     }) {
                         Image(systemName: "bell.fill")
                             .font(.system(size: 20, weight: .medium))
@@ -51,10 +48,8 @@ struct RatingView: View {
                 .padding(.vertical, 12)
                 .background(Color("whiteAsset"))
                 
-                // Основной контент
                 ScrollView {
                     VStack(alignment: .leading, spacing: 24) {
-                        // Заголовок
                         VStack(alignment: .leading, spacing: 0) {
                             Text("Рейтинг самых")
                                 .font(.system(size: 32, weight: .bold))
@@ -66,7 +61,6 @@ struct RatingView: View {
                         .padding(.horizontal, 20)
                         .padding(.top, 20)
                         
-                        // Сегментированный переключатель
                         HStack(spacing: 0) {
                             Button(action: {
                                 selectedTab = 0
@@ -97,7 +91,6 @@ struct RatingView: View {
                         .cornerRadius(16)
                         .padding(.horizontal, 20)
                         
-                        // Список семей
                         VStack(spacing: 12) {
                             ForEach(families) { family in
                                 FamilyRankRow(family: family)

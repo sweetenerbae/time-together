@@ -4,7 +4,6 @@ struct InterestSelectionView: View {
     @State private var searchText: String = ""
     @State private var selectedInterests: Set<String> = []
     
-    // All available interests with their image names
     let interests: [Interest] = [
             Interest(id: "anime", name: "Аниме", imageName: "anime_image"),
             Interest(id: "movies", name: "Фильмы", imageName: "movies_image"),
@@ -56,7 +55,6 @@ struct InterestSelectionView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.top, 20)
                     
-                    // Grid of interests
                     LazyVGrid(
                         columns: [
                             GridItem(.flexible()),

@@ -1,18 +1,15 @@
 import SwiftUI
 
 struct AppCoordinatorView: View {
-    
-    // MARK: - Dependencies
-
-    private let coordinator = AppCoordinator()
-    
-    // MARK: - Body
+    @AppStorage("hasCompletedOnboarding") private var hasCompletedOnboarding = false
 
     var body: some View {
-        coordinator.start()
+        if hasCompletedOnboarding {
+            MainTabView()
+        } else {
+            OnboardingContainerView(onFinish: {
+                self.hasCompletedOnboarding = true
+            })
+        }
     }
-}
-
-#Preview {
-    AppCoordinatorView()
 }
