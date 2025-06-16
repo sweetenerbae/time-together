@@ -5,8 +5,7 @@ struct CustomTabBar: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            Divider()
-            HStack {
+            HStack(spacing: 30) {
                 Spacer()
                 tabItem(image: "house.fill", title: "Главная", tab: .home)
                 Spacer()
@@ -16,6 +15,7 @@ struct CustomTabBar: View {
                 Spacer()
             }
             .padding(.vertical, 10)
+            .padding(.bottom, 20)
             .background(Color("whiteAsset"))
         }
     }
@@ -37,9 +37,13 @@ struct CustomTabBar: View {
             }
             Text(title).font(.system(size: 12))
         }
-        .foregroundColor(selectedTab == tab ? .black : .gray)
+        .foregroundColor(selectedTab == tab ? Color.labelBlack : Color.gray)
         .onTapGesture {
             selectedTab = tab
         }
     }
+}
+
+#Preview {
+    CustomTabBar(selectedTab: .constant(.home))
 }
