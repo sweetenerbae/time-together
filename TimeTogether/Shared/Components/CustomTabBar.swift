@@ -5,6 +5,7 @@ struct CustomTabBar: View {
 
     var body: some View {
         VStack(spacing: 0) {
+            Divider()
             HStack(spacing: 30) {
                 Spacer()
                 tabItem(image: "house.fill", title: "Главная", tab: .home)
