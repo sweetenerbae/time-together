@@ -6,7 +6,7 @@ struct ActionButton: View {
     var isEnabled: Bool = true
     var backgroundColor: Color
     var foregroundColor: Color
-
+    
     var body: some View {
         Button(action: action) {
             Text(title)
